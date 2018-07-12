@@ -1,0 +1,45 @@
+package BinarySearch;
+
+import java.util.Scanner;
+
+public class binary_search {
+
+	public static int binarysearch(int arr[],int size,int search)
+	{
+		int left,right;
+		left=0;
+		right=size-1;
+		while(left<=right)
+		{
+			int mid=(left+right)/2;
+			if(arr[mid]==search)
+			{
+				System.out.print(search+" Found at Loaction: "+(mid+1));
+			}
+			if(arr[mid]<search)
+			{
+				left=mid+1;
+			}
+			else
+			{
+				right=mid-1;
+			}
+		}
+		return -1;
+	}
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Size: ");
+		int n=sc.nextInt();
+		System.out.println("Enter Element: ");
+		int[] value=new int[n];
+		for(int i=0;i<n;i++)
+		{
+			value[i]=sc.nextInt();
+		}
+		System.out.println("Enter Search Value: ");
+		int x=sc.nextInt();
+		binarysearch(value,n,x);
+	}
+
+}

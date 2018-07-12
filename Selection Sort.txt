@@ -1,0 +1,52 @@
+package SelectionSort;
+
+import java.util.Scanner;
+
+public class selectionsort {
+
+	public static void selection_sort(int arr[],int n)
+	{
+		int i,j,temp,index_min;
+		for(i=0;i<n-1;i++)
+		{
+			index_min=i;
+			for(j=i+1;j<n;j++)
+			{
+				if(arr[j]<arr[index_min])
+				{
+					index_min=j;
+				}
+			}
+			if(index_min!=i)
+			{
+				temp=arr[i];
+				arr[i]=arr[index_min];
+				arr[index_min]=temp;
+			}
+		}
+	}
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Size: ");
+		int size=sc.nextInt();
+		System.out.println("Enter Element: ");
+		int[] value=new int[size];
+		for(int i=0;i<size;i++)
+		{
+			value[i]=sc.nextInt();
+		}
+		System.out.print("Before Selection Sort: ");
+		for(int x: value)
+		{
+			System.out.print(x+" ");
+		}
+		System.out.println();
+		selection_sort(value,size);
+		System.out.print("After Selection Sort: ");
+		for(int x: value)
+		{
+			System.out.print(x+" ");
+		}
+	}
+
+}

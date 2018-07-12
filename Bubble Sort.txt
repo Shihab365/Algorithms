@@ -1,0 +1,47 @@
+package BubbleSort;
+
+import java.util.Scanner;
+
+public class bubblesort {
+
+	public static void bubble_sort(int arr[],int n)
+	{
+		int i,j,temp;
+		for(i=0;i<n;i++)
+		{
+			for(j=0;j<n-1;j++)
+			{
+				if(arr[j]>arr[j+1])
+				{
+					temp=arr[j];
+					arr[j]=arr[j+1];
+					arr[j+1]=temp;
+				}
+			}
+		}
+	}
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Size: ");
+		int size=sc.nextInt();
+		System.out.println("Enter Element: ");
+		int[] value=new int[size];
+		for(int i=0;i<size;i++)
+		{
+			value[i]=sc.nextInt();
+		}
+		System.out.println("Before Bubble Sort: ");
+		for(int x: value)
+		{
+			System.out.print(x+" ");
+		}
+		System.out.println();
+		bubble_sort(value,size);
+		System.out.println("After Bubble Sort: ");
+		for(int x: value)
+		{
+			System.out.print(x+" ");
+		}
+	}
+
+}
